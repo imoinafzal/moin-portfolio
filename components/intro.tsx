@@ -7,22 +7,19 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsGithub, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
-import { useInView } from "react-intersection-observer";
+import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
 const Intro = () => {
-  const { ref, inView } = useInView({
-    threshold: 0.5,
-  });
-  const { setActiveSection } = useActiveSectionContext();
+  const { ref } = useSectionInView("Home", 0.5);
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
-  useEffect(() => {
-    if (inView) {
-      setActiveSection("Home");
-    }
-  }, [inView, setActiveSection]);
   return (
-    <section ref={ref} className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]" id="home">
+    <section
+      ref={ref}
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      id="home"
+    >
       <div className="flex justify-center items-center">
         <div className="relative">
           <motion.div
@@ -53,7 +50,7 @@ const Intro = () => {
             }}
             className="text-3xl absolute bottom-0 right-0"
           >
-            🤘
+            👏
           </motion.span>
         </div>
       </div>
@@ -62,9 +59,9 @@ const Intro = () => {
         animate={{ opacity: 1, y: 0 }}
         className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl "
       >
-        <span className="font-bold">Hello, I'm Ricardo.</span> I'm a{" "}
+        <span className="font-bold">Hello, I'm Moin Afzal.</span> I'm a{" "}
         <span className="font-bold">full-stack developer</span> with{" "}
-        <span className="font-bold">8 years</span> of experience. I enjoy
+        <span className="font-bold">2 years</span> of experience. I enjoy
         building <span className="italic">sites & apps</span>. My focus is{" "}
         <span className="underline">React (Next.js)</span>.
       </motion.h1>
@@ -79,6 +76,10 @@ const Intro = () => {
         <Link
           href="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          onClick={() => {
+            setActiveSection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
         >
           Contact me here{" "}
           <BsArrowRight
@@ -88,7 +89,7 @@ const Intro = () => {
         </Link>
 
         <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10"
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
           href="/CV.pdf"
           download={true}
         >
@@ -97,7 +98,7 @@ const Intro = () => {
         </a>
 
         <a
-          className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
+          className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 dark:text-white/60"
           href="https://www.linkedin.com/in/imoinafzal/"
           target="_blank"
         >
@@ -105,7 +106,7 @@ const Intro = () => {
         </a>
 
         <a
-          className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10"
+          className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border border-black/10 dark:bg-white/10 dark:text-white/60"
           href="https://github.com/imoinafzal"
           target="_blank"
         >
