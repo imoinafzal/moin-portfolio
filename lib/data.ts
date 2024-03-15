@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import extramilesImg from "@/public/Extramiles.png";
+import imanzyImg from "@/public/Imanzy.png";
+import inspirationImg from "@/public/Inspiration.png";
 
 export const links = [
   {
@@ -53,8 +53,7 @@ export const experiencesData = [
   {
     title: "Web 3.0 and Metaverse",
     location: "Lahore, UMT",
-    description:
-      "",
+    description: "",
     icon: React.createElement(FaReact),
     date: "2022 - 2023",
   },
@@ -64,23 +63,23 @@ export const projectsData = [
   {
     title: "Extramiles",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+      "I worked as a frontend developer on this project during my stay at techanzy. My main responsibilities involved APIs integration and managing React components for better user experience.",
+    tags: ["React", "Next.js", "Nest.js", "Tailwind", "MongoDB"],
+    imageUrl: extramilesImg,
   },
   {
     title: "Imanzy",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
+      "I led this AI-based project which focused on image-generation through user prompts. AI image generation is its main feature alongwith photo editing.",
     tags: ["React", "Next.js", "Typescript", "Tailwind", "Foocus API", "AI"],
-    imageUrl: rmtdevImg,
+    imageUrl: imanzyImg,
   },
   {
     title: "Inspiration Animation",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
+      "Single=hhaandedly developed this AI-driven web application. It was more like a story e-book for the children and involved the same image-generation feature.",
     tags: ["React", "Next.js", "Typescript", "Tailwind", "Foocus API", "AI"],
-    imageUrl: wordanalyticsImg,
+    imageUrl: inspirationImg,
   },
 ] as const;
 
@@ -94,8 +93,9 @@ export const skillsData = [
   "Node.js",
   "Git",
   "Tailwind",
-  "Prisma",
   "MongoDB",
+  "ShadcnUI",
+  "Supabase",
   "Redux",
   "Express",
   "PostgreSQL",
