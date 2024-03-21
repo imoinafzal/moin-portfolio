@@ -35,14 +35,6 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "MERN-Stack bootcamp",
-    location: "Lahore, Township",
-    description:
-      "I graduated after 3 months of studying. I immediately found a job as a MERN-Stack developer.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2023",
-  },
-  {
     title: "Full-Stack Developer",
     location: "Lahore, DHA",
     description:
@@ -51,9 +43,17 @@ export const experiencesData = [
     date: "2023 - Present",
   },
   {
+    title: "MERN-Stack bootcamp",
+    location: "Lahore, Township",
+    description:
+      "I graduated after 3 months of studying at KS and got hands-on experience through many key projects. I immediately found a job as a MERN-Stack developer.",
+    icon: React.createElement(LuGraduationCap),
+    date: "2023",
+  },
+  {
     title: "Web 3.0 and Metaverse",
     location: "Lahore, UMT",
-    description: "",
+    description: "As a part of PIAIC, this course was designed to make the full-stack modern day developers using cutting-edge technologies.",
     icon: React.createElement(FaReact),
     date: "2022 - 2023",
   },
